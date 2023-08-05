@@ -4,8 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ./dist/src/main/server.js",
-    "start:dev": "nodemon --watch 'src/' --exec ts-node src/main/server.ts -e ts",
+    "start": "nodemon --watch 'src/' --exec ts-node src/main/server.ts -e ts",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand --detectOpenHandles",
     "test:verbose": "jest --passWithNoTests --runInBand --detectOpenHandles",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
