@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "start:production": "node dist/main/server.js",
     "start": "nodemon --watch 'src/' --exec ts-node src/main/server.ts -e ts",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand --detectOpenHandles",
     "test:verbose": "jest --passWithNoTests --runInBand --detectOpenHandles",
@@ -14,7 +15,7 @@
     "lint": "prettier --check .",
     "prettier": "prettier --write .",
     "prepare": "husky install",
-    "build": "tsc --project ./tsconfig.json"
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
@@ -44,6 +45,7 @@
     "express": "^4.18.2",
     "fast-glob": "^3.3.1",
     "mongodb": "^5.7.0",
-    "node-cron": "^3.0.2"
+    "node-cron": "^3.0.2",
+    "tsc-alias": "^1.8.7"
   }
 }

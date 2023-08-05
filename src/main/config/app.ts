@@ -4,7 +4,6 @@ import setupMiddlewares from './setup-middlewares'
 import dotenv from 'dotenv'
 import setupRoutes from './routes'
 import setupInjectionContainer from '../dependency-injection/di-container'
-import setupCron from '../cron/launch-cron'
 
 /** Server initial setup. All configuration functions must be called here.*/
 const app = express()

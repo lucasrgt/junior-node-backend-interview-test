@@ -4,6 +4,16 @@ Aqui é a parte onde tudo funciona na nossa nave. Tome cuidado com os fios, algu
 
 Esse projeto captura os lançamentos de foguetes da SPACE X e expõe para o mundo.
 
+# ROTAS
+
+GET "/" | Retorna a mensagem padrão
+
+GET "/launches" | Retorna os lançamentos paginados
+
+GET "/launches/stats" | Retorna os dados para os gráficos
+
+GET /launches/results | Retorna o número de sucessos e falhas
+
 # TECNOLOGIAS E TÉCNICAS UTILIZADAS
 
 - Partial Clean Architecture
@@ -20,9 +30,7 @@ Esse projeto captura os lançamentos de foguetes da SPACE X e expõe para o mund
 
 - TSyringe (dependency injection do Typescript)
 
-- Docker
+# EXECUTANDO O PROJETO
 
-# BUILDANDO E EXECUTANDO O PROJETO
-
-1° passo | Execute o comando: docker-compose build
-2 passo | Execute o comando: docker-compose up
+1° passo | Execute o comando: yarn install ou npm install
+2° passo | Execute o comando: yarn start ou npm run start
