@@ -31,7 +31,7 @@ export class MongoFindAllLaunchesRepository
       query.$or = [
         { name: { $regex: search, $options: 'i' } },
         { details: { $regex: search, $options: 'i' } },
-        { success: { $regex: successSearch } }
+        { success: successSearch }
       ]
     }
 
