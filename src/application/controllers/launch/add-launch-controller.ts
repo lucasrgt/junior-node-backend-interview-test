@@ -12,9 +12,15 @@ import {
   serverError
 } from '../../helpers/http-helper'
 import { validateFields } from '../../helpers/validate-fields-helper'
+import { inject, injectable } from 'tsyringe'
 
+/** Cria um lançamento novo */
+@injectable()
 export class AddLaunchController implements Controller {
-  constructor(private readonly addLaunchRepository: AddLaunchRepository) {}
+  constructor(
+    @inject('AddLaunchRepository')
+    private readonly addLaunchRepository: AddLaunchRepository
+  ) {}
   async handle(
     httpRequest: HttpRequest<AddLaunchParams>
   ): Promise<HttpResponse<Launch | HttpMessage>> {

@@ -11,6 +11,7 @@ import {
   serverError
 } from '../../helpers/http-helper'
 import { Launch } from '../../../domain/models'
+import { inject, injectable } from 'tsyringe'
 
 /** Tipo exclusivo do FindPaginatedLaunchesController para retornar as Launches paginadas */
 type PaginatedLaunches = {
@@ -23,8 +24,10 @@ type PaginatedLaunches = {
 }
 
 /** Retorna um documento paginado com todas as launches*/
+@injectable()
 export class FindPaginatedLaunchesController implements Controller {
   constructor(
+    @inject('FindAllLaunchesRepository')
     private readonly findAllLaunchesRepository: FindAllLaunchesRepository
   ) {}
   async handle(
@@ -32,13 +35,17 @@ export class FindPaginatedLaunchesController implements Controller {
   ): Promise<HttpResponse<PaginatedLaunches | HttpMessage>> {
     try {
       const query = request.query || {}
-      const { limit = 5, page = 1, search } = query
+      const { limit, page, search } = query
+
+      console.log('chegou aqui 1')
 
       const paginatedLaunches = await this.findAllLaunchesRepository.findAll({
         search,
         limit,
         page
       })
+
+      console.log('chegou aqui 2')
 
       if (!paginatedLaunches) {
         return badRequest('Nenhum lançamento encontrado.')

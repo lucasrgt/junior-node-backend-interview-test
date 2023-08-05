@@ -3,6 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./dist/main/server.js",
+    "start:dev": "nodemon --watch 'src/' --exec ts-node src/main/server.ts -e ts",
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test:verbose": "jest --passWithNoTests --runInBand",
+    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test:integration": "npm test -- --watch -c jest-integration-config.js",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:ci": "npm test -- --coverage",
+    "lint": "prettier --check .",
+    "prettier": "prettier --write .",
+    "prepare": "husky install",
+    "build": "tsc --project ./tsconfig.json"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
@@ -11,6 +25,7 @@
     "@types/node": "^20.4.7",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
+    "dotenv": "^16.3.1",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.10.0",
     "husky": "^8.0.3",
@@ -24,6 +39,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^5.7.0"
   }
 }

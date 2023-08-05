@@ -5,6 +5,7 @@ interface ValidateFieldsTypes {
   missingField?: string
 }
 
+/** Valida os parâmetros requeridos para a criação de um objeto no sistema */
 export const validateFields = <Params>(
   httpRequest: HttpRequest<Params>,
   requiredFields: string[]
