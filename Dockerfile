@@ -5,6 +5,7 @@ WORKDIR /usr/src/spacex-api
 COPY package*.json ./
 
 RUN yarn install
+RUN yarn install nodemon --global
 
 COPY . .
 
