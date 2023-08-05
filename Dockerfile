@@ -4,8 +4,6 @@ WORKDIR /usr/src/spacex-api
 
 COPY package*.json ./
 
-RUN npm install --global yarn
-
 RUN yarn install
 
 COPY . .
