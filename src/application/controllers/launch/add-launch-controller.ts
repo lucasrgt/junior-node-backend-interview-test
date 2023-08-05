@@ -16,7 +16,7 @@ import { inject, injectable } from 'tsyringe'
 
 /** Cria um lançamento novo */
 @injectable()
-export class AddLaunchController implements Controller {
+export class AddLaunchController implements Controller<Launch> {
   constructor(
     @inject('AddLaunchRepository')
     private readonly addLaunchRepository: AddLaunchRepository

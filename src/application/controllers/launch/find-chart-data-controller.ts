@@ -7,7 +7,7 @@ import { inject, injectable } from 'tsyringe'
 
 /** Retorna os dados que serão utilizados nos gráficos */
 @injectable()
-export class FindChartDataController implements Controller {
+export class FindChartDataController implements Controller<ChartData> {
   constructor(
     @inject('FindChartDataRepository')
     private readonly findChartDataRepository: FindChartDataRepository

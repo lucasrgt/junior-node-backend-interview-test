@@ -25,7 +25,9 @@ type PaginatedLaunches = {
 
 /** Retorna um documento paginado com todas as launches*/
 @injectable()
-export class FindPaginatedLaunchesController implements Controller {
+export class FindPaginatedLaunchesController
+  implements Controller<PaginatedLaunches>
+{
   constructor(
     @inject('FindAllLaunchesRepository')
     private readonly findAllLaunchesRepository: FindAllLaunchesRepository

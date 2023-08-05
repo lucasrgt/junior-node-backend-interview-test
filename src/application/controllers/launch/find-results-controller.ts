@@ -7,7 +7,7 @@ import { inject, injectable } from 'tsyringe'
 
 /** Encontra os resultados de lançamento, nesse caso sucessos e falhas */
 @injectable()
-export class FindResultsController implements Controller {
+export class FindResultsController implements Controller<Result> {
   constructor(
     @inject('FindResultsRepository')
     private readonly findResultsRepository: FindResultsRepository
