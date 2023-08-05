@@ -24,4 +24,5 @@ Esse projeto captura os lançamentos de foguetes da SPACE X e expõe para o mund
 
 # BUILDANDO E EXECUTANDO O PROJETO
 
-1° passo | Execute o comando: docker-compose up
+1° passo | Execute o comando: docker-compose build
+2 passo | Execute o comando: docker-compose up
