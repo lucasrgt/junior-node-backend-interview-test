@@ -2,9 +2,7 @@ import { Launch } from '../../../domain/models'
 import { FindAllRepository } from '../contracts/repository'
 
 export type FindAllLaunchesParams = {
-  name?: string
-  details?: string
-  success?: boolean
+  search?: string
   limit?: number
   page?: number
 }

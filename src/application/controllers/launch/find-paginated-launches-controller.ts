@@ -39,15 +39,11 @@ export class FindPaginatedLaunchesController
       const query = request.query || {}
       const { limit, page, search } = query
 
-      console.log('chegou aqui 1')
-
       const paginatedLaunches = await this.findAllLaunchesRepository.findAll({
         search,
         limit,
         page
       })
-
-      console.log('chegou aqui 2')
 
       if (!paginatedLaunches) {
         return badRequest('Nenhum lançamento encontrado.')
