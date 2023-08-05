@@ -1,3 +1,1 @@
-export type Result = {
-  success: boolean
-}
+export type Result = { success: number; failure: number }

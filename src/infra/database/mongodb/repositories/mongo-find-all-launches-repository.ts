@@ -5,6 +5,7 @@ import {
 import { Launch } from '../../../../domain/models'
 import { MongoHelper } from '../helpers/mongo-helper'
 import { parseBoolean } from '../helpers/parse-boolean'
+import { badRequest } from '../../../../application/helpers/http-helper'
 
 export type PaginatedResponse<T> = {
   results: T
@@ -46,7 +47,14 @@ export class MongoFindAllLaunchesRepository
       .toArray()
 
     if (launches.length === 0) {
-      return { message: 'Não foi possível encontrar nenhum lançamento.' }
+      return {
+        results: [],
+        totalDocs: 0,
+        page: 0,
+        totalPages: 0,
+        hasNext: false,
+        hasPrev: false
+      }
     }
 
     const totalDocs = await launchesCollection.countDocuments(query)

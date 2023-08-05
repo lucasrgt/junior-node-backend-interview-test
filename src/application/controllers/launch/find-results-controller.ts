@@ -14,8 +14,8 @@ export class FindResultsController implements Controller<Result> {
   ) {}
   async handle(): Promise<HttpResponse<Result | HttpMessage>> {
     try {
-      const results = await this.findResultsRepository.findAll()
-      return ok(results)
+      const result: Result = await this.findResultsRepository.findAll()
+      return ok(result)
     } catch (error) {
       return serverError()
     }
