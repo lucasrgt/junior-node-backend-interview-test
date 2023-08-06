@@ -25,7 +25,9 @@ const fetchLaunchFromSpaceX = async (): Promise<string | void> => {
 }
 
 /** Save found launch from fetch into the database. */
-const save = async (launch: Launch): Promise<void | HttpResponse<Error>> => {
+export const save = async (
+  launch: Launch
+): Promise<void | HttpResponse<Error>> => {
   const addLaunchController = container.resolve(AddLaunchController)
 
   const { id, ...launchWithoutId } = launch

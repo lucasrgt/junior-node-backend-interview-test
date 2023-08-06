@@ -32,5 +32,12 @@ GET /launches/results | Retorna o número de sucessos e falhas
 
 # EXECUTANDO O PROJETO
 
-1° passo | Execute o comando: yarn install ou npm install
-2° passo | Execute o comando: yarn start ou npm run start
+# BANCO DE DADOS
+
+1° passo | O banco de dados roda num container do docker
+então utilize o comando: "docker-compose up" para subir o banco de dados antes de qualquer coisa.
+
+# APLICAÇÃO
+
+1° passo | Execute o comando: "yarn install" ou "npm install"
+2° passo | Execute o comando: "yarn start" ou "npm run start"
